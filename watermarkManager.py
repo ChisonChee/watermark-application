@@ -65,6 +65,8 @@ class watermarkManager:
                                justify="center")
         self.entry.grid(column=0, row=2, columnspan=4)
         self.entry.bind(sequence="<Return>", func=self.on_return)
+        self.entry.grid(column=0, row=2, columnspan=4, ipadx=100)
+        self.entry.insert(index=0, string="<Enter> your watermark text.")
         self.entry.lift()
 
     def on_return(self, event):
@@ -96,7 +98,7 @@ class watermarkManager:
                                font=font.Font(family="Times", size=20),
                                textvariable=self.file_save_path,
                                justify="center")
-        self.entry.insert(index=0, string="Save your image as filename.extension")
+        self.entry.insert(index=0, string="<Enter> your image as filename.extension")
         self.entry.bind(sequence="<ButtonPress>", func=clear_text)
         self.entry.grid(column=0, row=2, columnspan=4, ipadx=100)
         self.entry.bind(sequence="<Return>", func=self.on_save)
